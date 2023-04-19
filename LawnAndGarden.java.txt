@@ -1,0 +1,13 @@
+// Sub class Lawn and Garden
+	public class LawnAndGarden extends HomeAppliances {
+		
+		public String location;
+
+		public String getlocation() {
+			return this.location;
+		}
+
+		public void setLocation(String location) {
+			this.location = location;
+		}
+	}

@@ -1,0 +1,118 @@
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+      Map<String, List<String>> keywordsMap = new HashMap<>();
+      List<String> keywords;
+      
+      keywords = new ArrayList<>();
+      keywords.add("Electronics");
+      keywords.add("ElectroTools");
+      keywordsMap.put("Electronics",keywords);
+      keywords = new ArrayList<>();
+      keywords.add("Furnitures");
+	  keywords.add("FurnitureTools");
+	  keywordsMap.put("Furnitures",keywords);
+	  keywords = new ArrayList<>();
+      keywords.add("HomeAppliances");
+	  keywords.add("HomeTools");
+	  keywords.add("Home");
+	  keywordsMap.put("HomeAppliances",keywords);
+	  keywords = new ArrayList<>();
+	  keywords.add("MajorAppliances");
+	  keywords.add("MajorAppliancesTools");
+	  keywordsMap.put("MajorAppliances",keywords);
+	  keywords = new ArrayList<>();
+	  keywords.add("MinorAppliances");
+	  keywords.add("MinorAppliancesTools");
+	  keywordsMap.put("MajorAppliances",keywords);
+	  keywords = new ArrayList<>();
+	  keywords.add("Lawn");
+	  keywords.add("Garden");
+	  keywords.add("GardeningTools");
+	  keywordsMap.put("LawnAndGarden",keywords);
+	   keywords = new ArrayList<>();
+	  keywords.add("Kitchen");
+	  keywordsMap.put("KitchenAppliances",keywords);
+	  keywords = new ArrayList<>();
+	  keywords.add("General");
+	  keywordsMap.put("GeneralAppliances",keywords);
+     
+      
+      // Test Case 1 ELECTRONICS
+      // Map Key = categories, Value = keywords for that Category
+      Electronics electronics = new Electronics();
+      electronics.setkeywords(keywordsMap.get("Electronics"));
+      electronics.setLevel("1");
+      // Test all results
+      List<String> resultAllElectronics = electronics.findAllKeywords();
+      System.out.println("keywords for Electronics Category: "+resultAllElectronics);
+      // Test search by a specific keyword
+      String resultOneElectronics = electronics.findByKeyword(resultAllElectronics,"ElectroTools");
+      System.out.println("The result of the search is: "+ resultOneElectronics);
+      // Test error output (keyword doesn't exist)
+      String resultOneElectronicsError = electronics.findByKeyword(resultAllElectronics,"ElectroToo");
+      System.out.println("The result of the search is: "+ resultOneElectronicsError);
+      //Test level
+      System.out.println("level: "+electronics.level);
+      
+      // Test Case 2 FURNITURES
+      // Map Key = categories, Value = keywords for that Category
+      Furnitures furnitures = new Furnitures();
+      furnitures.setkeywords(keywordsMap.get("Furnitures"));
+      furnitures.setLevel("1");
+      // Test all results
+      List<String> resultAllFurnitures = furnitures.findAllKeywords();
+      System.out.println("keywords for Furnitures Category: "+resultAllFurnitures);
+       // Test search by a specific keyword
+      String resultOneFurnitures = furnitures.findByKeyword(resultAllFurnitures,"Furnitures");
+      System.out.println("The result of the search is: "+ resultOneFurnitures);
+      // Test error output (keyword doesn't exist)
+      String resultOneFurnituresError = furnitures.findByKeyword(resultAllFurnitures,"Furnitur");
+      System.out.println("The result of the search is: "+ resultOneFurnituresError);
+      //Test level
+      System.out.println("level: "+furnitures.level);
+      
+      // Test Case 3 HOME APPLIANCES
+      // Map Key = categories, Value = keywords for that Category
+      HomeAppliances homeAppliances = new HomeAppliances();
+      homeAppliances.setkeywords(keywordsMap.get("HomeAppliances"));
+      homeAppliances.setLevel("1");
+      // Test all results
+      List<String> resultAllHomeAppliances = homeAppliances.findAllKeywords();
+      System.out.println("keywords for Home Appliances Category: "+resultAllHomeAppliances);
+       // Test search by a specific keyword
+      String resultOneHomeAppliances = homeAppliances.findByKeyword(resultAllHomeAppliances,"Home");
+      System.out.println("The result of the search is: "+ resultOneHomeAppliances);
+      // Test error output (keyword doesn't exist)
+      String resultOneHomeAppliancesError = homeAppliances.findByKeyword(resultAllHomeAppliances,"Homee");
+      System.out.println("The result of the search is: "+ resultOneHomeAppliancesError);
+      //Test level
+      System.out.println("level: "+homeAppliances.level);
+      
+      //Test Case 4 LAWN AND GARDEN
+      // Map Key = categories, Value = keywords for that Category
+      LawnAndGarden lawnAndGarden = new LawnAndGarden();
+      lawnAndGarden.setkeywords(keywordsMap.get("LawnAndGarden"));
+      lawnAndGarden.setLevel("2");
+      lawnAndGarden.setLocation("outside");
+      // Test all results
+      List<String> resultAlllawnAndGarden = lawnAndGarden.findAllKeywords();
+      System.out.println("keywords for Lawn and Garden Category: "+resultAlllawnAndGarden);
+       // Test search by a specific keyword
+      String resultOnelawnAndGarden = lawnAndGarden.findByKeyword(resultAlllawnAndGarden,"GardeningTools");
+      System.out.println("The result of the search is: "+ resultOnelawnAndGarden);
+      // Test error output (keyword doesn't exist)
+      String resultOnelawnAndGardenError = lawnAndGarden.findByKeyword(resultAlllawnAndGarden,"Garde");
+      System.out.println("The result of the search is: "+ resultOnelawnAndGardenError);
+      //Test level
+      System.out.println("level: "+lawnAndGarden.level);
+      //Test attribute Location 
+      System.out.println("level: "+lawnAndGarden.location);
+      
+    }
+}

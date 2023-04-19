@@ -1,0 +1,67 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.math.BigDecimal;
+
+public class Electronics {
+
+	public Electronics() {
+
+	};
+
+	public String name;
+	public BigDecimal size;
+	public BigDecimal averageCost;
+	public String level;
+	public List<String> keywords;
+
+	public String getName() {
+		return this.name;
+	};
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public BigDecimal getSize() {
+		return this.size;
+	};
+
+	public void setSize(BigDecimal size) {
+		this.size = size;
+	}
+
+	public BigDecimal getAverageCost() {
+		return this.averageCost;
+	};
+
+	public void setAverageCost(BigDecimal averageCost) {
+		this.averageCost = averageCost;
+	}
+
+	public String getlevel() {
+		return this.level;
+	};
+
+	public void setLevel(String level) {
+		this.level = level;
+	}
+
+	public void setkeywords (List<String> keywords) {
+		this.keywords = keywords;
+	}
+
+	// get all keywords
+	public List<String> findAllKeywords(){
+		return this.keywords;
+	}
+
+	// get a specific keyword 
+	public String findByKeyword(List<String> keywords, String keywordToSearch) {
+		for (String kw : keywords) {
+			if (kw.equals(keywordToSearch)) {
+				return kw;
+			}	
+		}
+		return "keyword no found";
+	}
+}
